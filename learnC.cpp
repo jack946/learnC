@@ -2,10 +2,34 @@
 //
 
 #include <iostream>
+using namespace std;
 
+class Line
+{
+public:
+	Line(double a)
+	{
+		length = a;
+		cout << "length has been set:" << length << endl;
+	}
+	void setL(double b)
+	{
+		length = b;
+	}
+	double getL()
+	{
+		return length;
+	}
+private:
+	double length;
+};
 int main()
 {
-    std::cout << "Hello World!\n";
+	Line line(6.0);
+	cout << line.getL() << endl;
+	line.setL(8.2);
+	cout << line.getL() << endl;
+	return 0;
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
