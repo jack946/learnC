@@ -1,33 +1,22 @@
 ﻿#include<iostream>
+#include<stdio.h>
 using namespace std;
- //值传递
-  void change1(int n) 
-  {
-        cout << "值传递--函数操作地址" << &n << endl;   //显示的是拷贝的地址而不是源地址 
-       n++;
-  }
-
- //引用传递
- void change2(int& n) {
-         cout << "引用传递--函数操作地址" << &n << endl;
-         n++;
-    
-}
-  //指针传递
- void change3(int* n) {
-          cout << "指针传递--函数操作地址 " << n << endl;
-     * n = *n + 1;
-    
-}
- int     main() {
-         int n = 10;
-         cout << "实参的地址" << &n << endl;
-         change1(n);
-         cout << "after change1() n=" << n << endl;
-         change2(n);
-         cout << "after change2() n=" << n << endl;
-         change3(&n);
-         cout << "after change3() n=" << n << endl;
-         return true;
-    
+int main()
+{
+	int n= 0,i=0,s=0;  //n用于计划输入数目，i为实际输入数目,s用于求和。
+	cin >> n;
+	int *p = new int[n];
+	int j = 0;
+	
+	
+		while (cin >> *(p + j)&&j<n)
+		{
+			
+			s += *(p + j);	
+			j++;
+		}
+	
+	cout << s << endl;
+	delete []p;
+	return 0;
 }
