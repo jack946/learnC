@@ -1,28 +1,18 @@
-﻿#include <stdio.h>
+﻿#include <iostream>
+using namespace std;
 
 int main()
 {
-/*    int* p = new int;
-
-    *p = 5;
-    *p = *p + 10;
-
-    printf("p = %p\n", p);
-    printf("*p = %d\n", *p);
-
-    delete p;*/
-
-    int *p = new int[10];
-
-    for (int i = 0; i < 10; i++)
+    int x = 0,s=0;
+    int i = 0;
+    cin >> x;
+    int *p = new int[x];
+    for (; i < x; i++)
     {
-        p[i] = i + 1;
-
-        printf("p[%d] = %d\n", i, p[i]);
+        cin >> *(p+i);
+        s += *(p+i);
     }
-
+    cout << s << endl;
     delete[] p;
-
     return 0;
-
 }
