@@ -18,12 +18,12 @@
     <ClCompile Include="learnC.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
-    <ClCompile Include="circle.cpp">
+    <ClCompile Include="Point.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="circle.h">
+    <ClInclude Include="Point.h">
       <Filter>源文件</Filter>
     </ClInclude>
   </ItemGroup>
