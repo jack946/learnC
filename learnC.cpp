@@ -1,26 +1,28 @@
 ﻿#include<iostream>
 #include<stdio.h>
-
+#include<stdlib.h>
 using namespace std;
+
 int main()
 {
-	int r[10] = { 1,2,3,4,5,6,7,8,9,10};
-	int p;
-	cin >> p;
-	int* t = new int[p];
-	
-	for (int i = 0;i <= p-1;i++)
-		t[i] = r[i]; 
+	typedef int elemtype;
+	typedef struct LNODE
+	{
+		elemtype data;
+		struct LNODE *next;
+	}link,*linklist;
+	link *p;
+	link* head = new link;
+	head->next = NULL;
+	p = head;
 
-	for (int j = p;j <= 9;j++)
-		r[j - p] = r[j]; 
-
-	for (int m = 0;m <= p - 1;m++)
-		r[m+10-p]=t[m];
-
-	for(int k=0;k<=9;k++)
-	cout << r[k] << endl;
-	
+	for (int i = 1;i <= 10;i++)
+	{
+		link* a = new link;
+		a->data = i;
+		a->next = p->next;
+		p->next=a;
+	}
+	cout << p->next->next->data;
 	return 0;
-	
 }
